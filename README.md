@@ -15,11 +15,16 @@ database.ymlの設定変更(config/database.yml)
 password: password
 host: db
 ```
-db作成
-```bash
-$ docker-compose exec app rails db:create
-```
 ビルドして起動
 ```bash
 $ sudo docker-compose up -d --build
+```
+再起動
+```bash
+$ docker-compose down
+$ docker-compose up -d
+```
+db作成
+```bash
+$ docker-compose exec app rails db:create
 ```
