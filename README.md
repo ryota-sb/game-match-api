@@ -4,6 +4,13 @@ Docker環境　Rails + MySQL
 - Rails 5
 - MySQL 5.7 
 
+## M1 Macの場合
+docker-compose.ymlに追記
+```bash
+db:
+  platform: linux/x86_64
+```
+
 ## 初期設定
 プロジェクト作成
 ```bash
