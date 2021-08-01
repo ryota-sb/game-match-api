@@ -11,11 +11,11 @@ services:
       - db
   db:
     image: mysql:5.7
+    platform: linux/x86_64
     volumes:
       - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
       - ./docker/mysql/data:/var/lib/mysql
     environment:
-      - MYSQL_USER=root
       - MYSQL_ROOT_PASSWORD=password
     ports:
       - "3306:3306"
