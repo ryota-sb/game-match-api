@@ -1,5 +1,5 @@
 require 'net/http'
-require 'url'
+require 'uri'
 
 class JsonWebToken
   def self.verify(token)
