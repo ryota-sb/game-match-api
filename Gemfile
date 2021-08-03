@@ -7,11 +7,11 @@ gem 'rails', '~> 5.2.6'
 gem 'mysql2', '>= 0.4.4', '< 0.6.0'
 gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.1.0', require: false
-gem 'dotenv-rails'
 gem 'jwt'
 gem 'rack-cors'
 
 group :development, :test do
+  gem 'dotenv-rails', require: 'dotenv/rails-now'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
