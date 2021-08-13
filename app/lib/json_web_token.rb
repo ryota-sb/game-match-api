@@ -4,7 +4,7 @@ require 'uri'
 class JsonWebToken
   def self.verify(token)
     JWT.decode(
-        token, nil,
+        token, nil, true,
         algorithm: 'RS256',
         iss: ENV['AUTH0_DOMAIN'],
         verify_iss: true,
@@ -22,7 +22,7 @@ class JsonWebToken
       jwks_keys.map do |k|
         [
           k['kid'],
-          openSSL::X509::Certificate.new(
+          OpenSSL::X509::Certificate.new(
             Base64.decode64(k['x5c'].first)
           ).public_key
         ]
