@@ -1,12 +1,9 @@
 module Api
   module V1
     class SecuredController < ApplicationController
-      
-      include Secured
-
       def index
         render json: {
-          message: "#{current_user}"
+          message: "ID: #{current_user.id}, SUB: #{current_user.sub}"
         }
       end
     end
