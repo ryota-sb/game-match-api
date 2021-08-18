@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      resources :test, only: [:index]
-      resources :secured, only: [:index]
+      get 'login', to: 'secured#login'
+      get 'logout', to: 'secured#logout'
       resources :users, only: [:index]
       resources :profiles, only: [:create, :update]
     end
