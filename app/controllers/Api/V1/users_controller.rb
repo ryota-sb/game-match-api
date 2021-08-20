@@ -3,8 +3,14 @@ module Api
     class UsersController < ApplicationController
       
       def index
-        users = User.where.not(id: current_user.id)
-        render json: { status: 'success', data: users }
+        # ログインユーザーを省いた、一人のユーザーレコードを取得
+        user = User.where.not(id: current_user.id).order(Arel.sql('RAND()')).limit(1)
+        render json: { status: 'success', data: user }
+      end
+
+      def show
+        user = User.find(current_user.id)
+        render json: { data: user }
       end
 
     end

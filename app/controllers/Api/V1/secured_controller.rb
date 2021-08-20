@@ -3,10 +3,9 @@ module Api
     class SecuredController < ApplicationController
 
       def login
-        user = User.find(current_user.id)
         render json: {
           message: "ID: #{current_user.id}, SUB: #{current_user.sub} でログインしました",
-          data: user
+          data: current_user
         }
       end
 
