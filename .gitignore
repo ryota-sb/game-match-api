@@ -24,4 +24,4 @@
 
 /.env
 
-/docker
+/docker/mysql/
