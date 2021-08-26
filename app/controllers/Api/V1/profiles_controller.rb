@@ -23,7 +23,7 @@ module Api
       private
     
       def profile_params
-        params.permit(:discord_id, :message).merge(user_id: current_user.id)
+        params.permit(:image, :discord_id, :message).merge(user_id: current_user.id)
       end
     end
   end
