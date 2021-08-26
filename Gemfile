@@ -9,6 +9,7 @@ gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'jwt'
 gem 'rack-cors'
+gem 'carrierwave'
 
 group :development, :test do
   gem 'dotenv-rails', require: 'dotenv/rails-now'
